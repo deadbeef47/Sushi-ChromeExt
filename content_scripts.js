@@ -1,17 +1,16 @@
 
-$("body").append(
-    '<img id="sushi" src="' + chrome.extension.getURL('img/sushi_aburi_toro.png') + '"' + 
-    ' style="left:' +  $(window).width() + 'px;"' + 
-    ' alt="🍣"></img>');
+function CreateSushi(){
+    var sushi = $('<div class="sushi"' +
+    // ' style="font-size:60pt;left:' + ($(window).width()) + 'px;"' + 
+    ' style="font-size:60pt;right:0px;"' + 
+    '>🍣</div>').appendTo('#sushis');
 
-$('#sushi').css({
-    position:'absolute',
-    width:'256px',
-    height:'256px',
-    bottom:'200px',
-});
+    var width = sushi.width();
+    sushi.hide().fadeIn(700).animate({'bottom':$(sushi).offset().bottom, 'left':-width+'px'}, { duration: 7000, queue: false, easing: 'linear' }, function(){
+        $(this).remove();
+    });
+}
 
-$(function(){
-    var width = $('#sushi').width();
-    $('#sushi').animate({'bottom':$('#sushi').offset().bottom, 'left':-width+'px'},5000, 'linear');
-});
+$('body').append('<div id="sushis"></div>');
+
+setInterval("CreateSushi()", 1000);
