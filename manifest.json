@@ -16,7 +16,7 @@
     },
     "browser_action" : {
         "default_icon": "img/sushi_aburi_toro.png",
-        "default_title": "",
+        "default_title": "sushi",
         "default_popup": "popup.html"
     },
     "permissions": [
@@ -26,6 +26,5 @@
         "https://*/*"
     ],
     "web_accessible_resources": [
-        "img/*"
     ]
 }

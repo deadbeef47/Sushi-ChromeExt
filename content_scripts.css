@@ -1,7 +1,9 @@
 
 .sushi {
-    position:absolute;
+    /* position:absolute; */
+    position:fixed;
     width:128px;
     height:128px;
     bottom:200px;
+    z-index: -1;
 }
