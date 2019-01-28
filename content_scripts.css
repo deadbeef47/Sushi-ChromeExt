@@ -4,6 +4,6 @@
     position:fixed;
     width:128px;
     height:128px;
-    bottom:200px;
+    bottom:0px;
     z-index: -1;
 }
